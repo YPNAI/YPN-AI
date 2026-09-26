@@ -16,7 +16,7 @@ api_key = st.secrets.get("GEMINI_API_KEY")
 if api_key:
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel(
-        model_name="gemini-1.5-flash-latest",
+        model_name="gemini-pro",
         system_instruction=SYSTEM_INSTRUCTION,
     )
 
@@ -35,3 +35,4 @@ if api_key:
         st.chat_message("assistant").write(response.text)
 else:
     st.error("कृपया Streamlit Secrets में API Key सेट करें।")
+    
